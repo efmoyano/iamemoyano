@@ -1,0 +1,11 @@
+{
+  "extends": "react-app",
+  "plugins": ["prettier","react-hooks"],
+  "rules": {
+    "prettier/prettier": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off",
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 1}],
+    "semi": ["error", "always"]
+  }
+}

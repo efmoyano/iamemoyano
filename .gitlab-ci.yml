@@ -1,0 +1,50 @@
+image: node:10.16.0
+
+stages:
+  - setup
+  - analyze
+  - report
+
+# Setup Dependencies
+setup:
+  stage: setup
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - yarn install --frozen-lockfile
+
+# Build Project
+build:
+  stage: analyze
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - yarn build
+  artifacts:
+    paths:
+      - build/
+
+# Apply lint rules
+lint:
+  stage: analyze
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - yarn lint
+
+# Publish page
+pages:
+  stage: report
+  dependencies:
+    - build
+  script:
+    - echo publish
+  artifacts:
+    paths:
+      - build
+    expire_in: 30 days
+  only:
+    - master
