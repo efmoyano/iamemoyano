@@ -41,10 +41,12 @@ pages:
   dependencies:
     - build
   script:
-    - echo publish
+    - rm -rf public/
+    - mkdir public
+    - cp -a build/. public/
   artifacts:
     paths:
-      - build
+      - public
     expire_in: 30 days
   only:
     - master
