@@ -1,8 +1,7 @@
 import React from 'react';
-import {  getNetworks } from 'helpers/networkHelper';
+import { getNetworks } from 'helpers/networkHelper';
 
 const Footer = props => {
-
   return (
     <footer>
       <div className="row">

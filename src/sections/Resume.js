@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Resume = (props) => {
+const Resume = props => {
   const getEducation = () => {
     return props.data.education.map(function(education) {
       return (

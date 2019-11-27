@@ -25,7 +25,8 @@ const About = props => {
                 <span>
                   {props.data.address.street}
                   <br />
-                  {props.data.address.city} {props.data.address.state}, {props.data.address.zip} 
+                  {props.data.address.city} {props.data.address.state},{' '}
+                  {props.data.address.zip}
                 </span>
                 <br />
                 <span>{props.data.phone}</span>

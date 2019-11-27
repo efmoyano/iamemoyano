@@ -9,7 +9,6 @@ import Portfolio from 'sections/Portfolio';
 import { Data } from 'variables/resumeData';
 
 const App = () => {
-
   return (
     <div className="App">
       <Header data={Data.main} />
