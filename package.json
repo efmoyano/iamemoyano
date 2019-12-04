@@ -3,41 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "description": "Ernesto Moyano's web page",
+  "homepage": "https://github.com/efmoyano/iamemoyano.git",
   "engines": {
     "yarn": "^1.6.0",
     "node": ">=8.3"
   },
   "dependencies": {
-    "@babel/plugin-proposal-class-properties": "7.7.4",
+    "gh-pages": "2.1.1",
     "jquery": "3.4.1",
     "react": "16.12.0",
     "react-dom": "16.12.0",
-    "react-ga": "2.7.0",
     "react-scripts": "3.2.0"
   },
   "scripts": {
-    "lint": "eslint src --color --cache",
-    "lint:ci": "eslint -o reports/lint/eslint.xml -f checkstyle src --cache",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --runInBand",
-    "test:mergereports": "junit-merge -d ./reports/ut/partial -o ./reports/ut/junitresults.xml",
     "eject": "react-scripts eject",
-    "dupe-check": "yarn jsinspect ./src",
-    "commit": "git add . && git-cz"
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-optional-chaining": "7.7.4",
-    "commitizen": "4.0.3",
-    "cz-conventional-changelog": "3.0.2",
-    "eslint-config-react-app": "5.0.2",
-    "eslint-plugin-prettier": "3.1.1",
-    "eslint-plugin-react-hooks": "2.3.0",
-    "husky": "3.1.0",
-    "jsinspect": "0.12.7",
-    "junit-merge": "2.0.0",
-    "prettier": "1.19.1",
-    "pretty-quick": "2.0.1"
+    "deploy": "gh-pages -d build"
   },
   "author": "Tufix Systems",
   "license": "MIT",
@@ -45,19 +27,6 @@
   "repository": {
     "type": "git",
     "url": ""
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn install --frozen-lockfile && yarn dupe-check && yarn pretty-quick --staged"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   },
   "browserslist": {
     "production": [
